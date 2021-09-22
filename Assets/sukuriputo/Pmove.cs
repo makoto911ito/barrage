@@ -5,16 +5,14 @@ using UnityEngine;
 public class Pmove : MonoBehaviour
 {
     private Rigidbody2D m_playerRb;
-
-    /// <summary>弾幕のこと</summary>
-    public GameObject bullet;
-    /// <summary>プレイヤーの名前</summary>
-    public Transform Harpy;
+    private Vector3 pos;
 
     /// <summary>プレイヤーの速度</summary>
     [SerializeField] float m_pSpeed = 2f;
-    /// <summary>弾幕の速度</summary>
-    [SerializeField] float m_bSpeed = 30f;
+    [SerializeField] int m_Plife = 0;
+    [SerializeField] Dannmaku m_dannmaku;
+    [SerializeField] float m_exp = 0f;
+    [SerializeField] float m_kexp = 0.01f;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +25,18 @@ public class Pmove : MonoBehaviour
     void Update()
     {
         Move();
-        Flring();
+        
+        if(m_Plife <= 0)
+        {
+            Destroy(this.gameObject);
+            Debug.Log("ゲームオーバー");
+        }
+
+        if(m_exp > 1.0f)
+        {
+            m_dannmaku.m_PlayeLv += 1;
+            m_exp = 0f;
+        }
     }
 
     void Move()
@@ -41,18 +50,33 @@ public class Pmove : MonoBehaviour
         velocity.y = v * m_pSpeed;
 
         m_playerRb.velocity = velocity;
+
+        MoveClamp();
     }
 
-    void Flring()
+    void MoveClamp()
     {
-        GameObject bullets = Instantiate(bullet) as GameObject;
-        Vector2 a;
-        a = this.gameObject.transform.forward * m_bSpeed;
+        pos = transform.position;
 
-        bullets.GetComponent<Rigidbody2D>().AddFprce(a);
+        pos.x = Mathf.Clamp(pos.x, -3, 3);
+        pos.y = Mathf.Clamp(pos.y, -5, 7);
 
-        bullets.transform.position = Harpy.position;
+        transform.position = pos;
+    }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Ebullet")
+        {
+            m_Plife -= 1;
+        }
+    }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "exp")
+        {
+            m_exp += m_kexp;
+        }
     }
 }
