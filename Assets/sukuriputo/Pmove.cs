@@ -9,11 +9,24 @@ public class Pmove : MonoBehaviour
 
     /// <summary>プレイヤーの速度</summary>
     [SerializeField] float m_pSpeed = 2f;
-    [SerializeField] int m_Plife = 0;
+
+    /// <summary>弾幕を参照する</summary>
     [SerializeField] Dannmaku m_dannmaku;
+
+    /// <summary>ゲームマネージャーを参照するための道具</summary>
     [SerializeField] GameManager m_gm;
+
+    /// <summary>取得中の経験値の値</summary>
     [SerializeField] float m_exp = 0f;
+
+    /// <summary>獲得する経験値の値</summary>
     [SerializeField] float m_kexp = 0.01f;
+
+    /// <summary>プレイヤーの最大ライフ</summary>
+    [SerializeField] int m_plife = 10;
+
+    /// <summary>プレイヤーの残機</summary>
+    [SerializeField] int m_stock = 3;
 
     // Start is called before the first frame update
     void Start()
@@ -26,13 +39,8 @@ public class Pmove : MonoBehaviour
     void Update()
     {
         Move();
+        life();
 
-        //ゲームオーバーの条件
-        if (m_Plife <= 0)
-        {
-            Destroy(this.gameObject);
-            Debug.Log("ゲームオーバー");
-        }
 
         //レベルアップの条件
         if (m_exp > 1.0f)
@@ -42,6 +50,7 @@ public class Pmove : MonoBehaviour
         }
     }
 
+    /// <summary>カメラの外にプレイヤーが移動しないようにする</summary>
     void Move()
     {
         float h = Input.GetAxisRaw("Horizontal");
@@ -90,7 +99,32 @@ public class Pmove : MonoBehaviour
         //敵が放つ弾幕に触れた場合か、敵自体に触れたときにプレイヤーのHPを１マイナスする。
         if (collision.gameObject.tag == "Ebullet" || collision.gameObject.tag == "enemi")
         {
-            m_Plife -= 1;
+            m_plife -= 1;
+        }
+
+    }
+
+    /// <summary>プレイヤーのライフと残機の計算</summary>
+    public void life() //プレイヤーのライフと残機の計算
+    {
+
+        if (m_plife <= 0)　//プレイヤーのライフが０になったら残機ストックを１減らす
+        {
+            m_stock -= 1;
+
+            if (m_stock > 0)　//残機ストックが０よりも多かったら新しくプレイヤーを生み出して再開することが出来たらいいな
+            {
+                //GameObject newplayer = Instantiate(m_player);
+                //newplayer.name = m_player.name;
+            }
+            else if (m_stock == 0)//ゲームオーバーの条件（残機ストックがゼロになったらゲームオーバー）
+            {
+                Destroy(this.gameObject);
+                Debug.Log("ゲームオーバー");
+                //m_gameoverText.enabled = true;
+                //m_gameoverText.text = "game over";
+            }
+
         }
 
     }

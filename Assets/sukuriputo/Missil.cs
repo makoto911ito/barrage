@@ -5,7 +5,9 @@ using UnityEngine;
 public class Missil : MonoBehaviour
 {
     public GameObject m_bulletPrefab;
+    /// <summary>弾幕のスピード</summary>
     [SerializeField] float m_bspeed = 500;
+    /// <summary>待機時間</summary>
     [SerializeField] float timeleft = 0.0f;
 
     // Start is called before the first frame update
@@ -18,7 +20,7 @@ public class Missil : MonoBehaviour
     void Update()
     {
         timeleft -= Time.deltaTime;
-        if (timeleft <= 0.0)
+        if (timeleft <= 0.0)　
         {
             Fire();
             timeleft = 0.1f;

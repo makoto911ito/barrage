@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class Dannmaku : MonoBehaviour
 {
+    /// <summary>PlayerFireを取得</summary>
     public GameObject PlayerFirePrefab;
+    /// <summary>生み出す銃口を入れる箱</summary>
     private GameObject obj;
+    /// <summary>銃口の箱を保存する場所</summary>
     private List<GameObject> obj2 = new List<GameObject>();
     //親オブジェクトのトランスフォームをアサイン
     public Transform Harpy;
     /// <summary>発射方向数 </summary>
     //public int wayNumber;
+    /// <summary>プレイヤーのレベル</summary>
     public int m_PlayeLv = 1;
 
     // Update is called once per frame
@@ -19,24 +23,21 @@ public class Dannmaku : MonoBehaviour
         Dbullet();
     }
 
-    void Dbullet()
+    void Dbullet()　//プレイヤーのレベルに応じて銃口の数変更
     {
-        if(m_PlayeLv == 1)
+        if (m_PlayeLv == 1)　//レベル１の時、正面のみに発射する
         {
             Delete();
 
             if (Input.GetButtonDown("Jump"))
             {
-                    // Instantiate()は、プレハブからクローンを産み出すメソッド（重要ポイント）
-                    // Quaternion.Euler(x, y, z)
-                    // 今回は「i = 0の時 → y = -30」「i = 1の時 → y = -15」「i = 2の時 → y = 0」「i = 3の時 → y = 15」「i = 4の時 → y = 15」になるようにする。
-                    obj = Instantiate(PlayerFirePrefab, transform.position, Quaternion.identity);
-                    obj.transform.SetParent(Harpy);
-                    obj2.Add(obj);
+                obj = Instantiate(PlayerFirePrefab, transform.position, Quaternion.identity);　//銃口を生成しそれをobjに代入している
+                obj.transform.SetParent(Harpy); //objをHarpy(プレイヤー)の子供にする
+                obj2.Add(obj);　//obj2のリストにobjを加えていく
             }
 
         }
-        else if(m_PlayeLv == 2)
+        else if (m_PlayeLv == 2)　//レベル２の時、v字方向に発射する
         {
             Delete();
 
@@ -44,15 +45,16 @@ public class Dannmaku : MonoBehaviour
             {
                 for (int i = 0; i < 2; i++)
                 {
+                    //銃口を生成しそれをobjに代入している　「Quaternion.Euler(0, 0, 7.5f + (-15f * i)」ここの部分は生み出す銃口の角度を決めている
                     obj = Instantiate(PlayerFirePrefab, transform.position, Quaternion.Euler(0, 0, 7.5f + (-15f * i)));
-                    obj.transform.SetParent(Harpy);
-                    obj2.Add(obj);
+                    obj.transform.SetParent(Harpy);　//objをHarpy(プレイヤー)の子供にする
+                    obj2.Add(obj);　//obj2のリストにobjを加えていく
                     Debug.Log(obj2.Count);
                     Debug.Log(obj2[i].name);
                 }
             }
         }
-        else if(m_PlayeLv == 3)
+        else if (m_PlayeLv == 3)　//レベル３の時、三方向（正面とV字方向）に発射する
         {
             Delete();
 
@@ -60,9 +62,10 @@ public class Dannmaku : MonoBehaviour
             {
                 for (int i = 0; i < 3; i++)
                 {
+                    //銃口を生成しそれをobjに代入している　「Quaternion.Euler(0, 0, 15f + (-15f * i)」ここの部分は生み出す銃口の角度を決めている
                     obj = Instantiate(PlayerFirePrefab, transform.position, Quaternion.Euler(0, 0, 15f + (-15f * i)));
-                    obj.transform.SetParent(Harpy);
-                    obj2.Add(obj);
+                    obj.transform.SetParent(Harpy);　//objをHarpy(プレイヤー)の子供にする
+                    obj2.Add(obj);　//obj2のリストにobjを加えていく
                     Debug.Log(obj2.Count);
                     Debug.Log(obj2[i].name);
                 }
@@ -70,17 +73,18 @@ public class Dannmaku : MonoBehaviour
         }
     }
 
+    /// <summary>発射ボタンを離したとき銃口の数分その銃口を消す</summary>
     void Delete()
     {
         if (Input.GetButtonUp("Jump"))
         {
-            for (int i = 0; i < obj2.Count; i++)
+            for (int i = 0; i < obj2.Count; i++)　//obj2の要素分ループする
             {
                 Debug.Log("mawaru");
-                Destroy(obj2[i]);
+                Destroy(obj2[i]);　//obj2の要素i番目を消していく
                 Debug.Log(i);
             }
-            obj2.Clear();
+            obj2.Clear();　//リストobj2の中身を殻にする
             Debug.Log(obj2.Count);
         }
     }

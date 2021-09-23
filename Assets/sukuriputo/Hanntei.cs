@@ -27,14 +27,16 @@ public class Hanntei : MonoBehaviour
         }
 
     }
+
+    /// <summary>カメラの外に出たときの処理</summary>
     void OnBecameInvisible()
     {
-        Destroy(this.gameObject);
+        Destroy(this.gameObject);　//このスクリプトを持つオブジェクトを消す
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)　//敵キャラに弾幕が当たった時の処理
     {
-        if(collision.gameObject.tag == "enemi")
+        if(collision.gameObject.tag == "enemi")　//弾幕が敵のタグをもつオブジェクトに当たった時、弾幕を消す
         {
             Destroy(this.gameObject);
         }

@@ -7,8 +7,13 @@ public class GameManager : MonoBehaviour
 {
     /// <summary>スコア表示テキスト </summary>
     [SerializeField] Text m_scoreText = default;
+    /// <summary>ゲームオーバーのテキスト</summary>
+    [SerializeField] Text m_gameoverText;
+    /// <summary>Pmoveを参照するための道具</summary>
+    [SerializeField] Pmove m_pmove;
 
     public int m_score = 0;
+
 
     void Update()
     {
