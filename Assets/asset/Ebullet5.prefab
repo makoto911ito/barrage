@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 6387627173481557237}
   - component: {fileID: 2356702785203798978}
   - component: {fileID: 1342383911597963819}
+  - component: {fileID: 7452682109096572653}
   m_Layer: 0
-  m_Name: nc177465_5
+  m_Name: Ebullet5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,3 +100,15 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.114285715
+--- !u!114 &7452682109096572653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7232708783106073883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee8179e028ef9144c8171b33c2c3c5a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
