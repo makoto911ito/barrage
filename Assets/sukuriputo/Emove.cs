@@ -7,7 +7,7 @@ public class Emove : MonoBehaviour
     /// <summary>敵の最大ライフ</summary>
     [SerializeField] int m_elife = 5;
     /// <summary>ゲームマネージャーを参照するための道具</summary>
-    [SerializeField] GameManager m_gm;
+    public GameManager m_gm;
     /// <summary>敵を倒したときのスコア</summary>
     public int m_eScore = 10;
 

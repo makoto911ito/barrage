@@ -9,6 +9,8 @@ TagManager:
   - exp
   - scorre
   - score
+  - Plaeyr
+  - Ebullet
   layers:
   - Default
   - TransparentFX

@@ -5,6 +5,9 @@ using UnityEngine;
 public class Pmove : MonoBehaviour
 {
     private Rigidbody2D m_playerRb;
+    private SpriteRenderer m_playerSr;
+    private CircleCollider2D m_playerCc;
+    private Animator m_retryAnime;
     private Vector2 pos;
 
     /// <summary>プレイヤーの速度</summary>
@@ -33,6 +36,11 @@ public class Pmove : MonoBehaviour
     {
         //リジットボディ２Dを持ってくる
         m_playerRb = GetComponent<Rigidbody2D>();
+        m_playerCc = GetComponent<CircleCollider2D>();
+        m_playerSr = GetComponent<SpriteRenderer>();
+        m_retryAnime = GetComponent<Animator>();
+
+        Debug.Log(m_stock);
     }
 
     // Update is called once per frame
@@ -40,6 +48,7 @@ public class Pmove : MonoBehaviour
     {
         Move();
         life();
+        Debug.Log(m_stock);
 
 
         //レベルアップの条件
@@ -111,11 +120,14 @@ public class Pmove : MonoBehaviour
         if (m_plife <= 0)　//プレイヤーのライフが０になったら残機ストックを１減らす
         {
             m_stock -= 1;
+            m_playerSr.enabled = false;
+            m_playerCc.enabled = false;
 
             if (m_stock > 0)　//残機ストックが０よりも多かったら新しくプレイヤーを生み出して再開することが出来たらいいな
             {
-                //GameObject newplayer = Instantiate(m_player);
-                //newplayer.name = m_player.name;
+                m_plife = 5;
+                Retry();
+
             }
             else if (m_stock == 0)//ゲームオーバーの条件（残機ストックがゼロになったらゲームオーバー）
             {
@@ -127,5 +139,13 @@ public class Pmove : MonoBehaviour
 
         }
 
+    }
+
+    void Retry()
+    {
+        m_retryAnime.Play("retryanime");
+        m_retryAnime.StopPlayback();
+        m_playerSr.enabled = true;
+        m_playerCc.enabled = true;
     }
 }
