@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EbulletB : MonoBehaviour
+public class BossBullet : MonoBehaviour
 {
     Transform m_enemyPos;
     Vector3 center;
@@ -16,8 +16,8 @@ public class EbulletB : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.RotateAround(center,new Vector3(0,0,5), 100 * Time.deltaTime);
-        transform.Translate(0,-0.003f, 0);
+        transform.RotateAround(center, new Vector3(0, 0, -5), -100 * Time.deltaTime);
+        transform.Translate(0, 0.003f, 0);
     }
 
 }

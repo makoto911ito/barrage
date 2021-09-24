@@ -11,6 +11,7 @@ TagManager:
   - score
   - Plaeyr
   - Ebullet
+  - GameManager
   layers:
   - Default
   - TransparentFX

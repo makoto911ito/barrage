@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBox : MonoBehaviour
+public class EnemyBOX2 : MonoBehaviour
 {
+
     [SerializeField] GameObject m_enemy;
     public float m_speed;
     [SerializeField] int m_enemynumber;
@@ -17,13 +18,13 @@ public class EnemyBox : MonoBehaviour
     {
         StartCoroutine(GeneEnemy());
 
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     IEnumerator GeneEnemy()
@@ -34,7 +35,7 @@ public class EnemyBox : MonoBehaviour
             {
                 m_x = Random.Range(-2.5f, 2.6f);
                 m_y = Random.Range(-4f, 0.1f);
-                GameObject enemey = Instantiate(m_enemy, new Vector3 (transform.position.x + m_x, transform.position.y + m_y, transform.position.z),Quaternion.identity);
+                GameObject enemey = Instantiate(m_enemy, new Vector3(transform.position.x + m_x, transform.position.y + m_y, transform.position.z), Quaternion.identity);
                 Rigidbody2D enemyRb = enemey.GetComponent<Rigidbody2D>();
                 enemyRb.AddForce(transform.forward * m_speed);
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fire : MonoBehaviour
+public class BossMissil : MonoBehaviour
 {
 
     /// <summary>生み出す銃口を入れる箱</summary>
@@ -10,6 +10,7 @@ public class Fire : MonoBehaviour
     /// <summary>銃口の箱を保存する場所</summary>
     private List<GameObject> obj2 = new List<GameObject>();
     [SerializeField] GameObject m_Ebullert;
+    [SerializeField] GameObject m_Ebullert2;
     //親オブジェクトのトランスフォームをアサイン
     [SerializeField] Transform enemi;
     private Transform tf;
@@ -46,6 +47,10 @@ public class Fire : MonoBehaviour
         Rigidbody2D bulletRb = Bullet.GetComponent<Rigidbody2D>();
         bulletRb.AddForce(transform.up * m_bspeed);
 
+        GameObject Bullet2 = Instantiate(m_Ebullert2, transform.position, Quaternion.identity);
+        Rigidbody2D bulletRb2 = Bullet.GetComponent<Rigidbody2D>();
+        bulletRb.AddForce(transform.up * m_bspeed);
+
         Destroy(Bullet, 30f);
 
         //if (m_time > 3)
@@ -66,4 +71,3 @@ public class Fire : MonoBehaviour
     //    }
     //}
 }
-
