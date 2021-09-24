@@ -17,10 +17,18 @@ public class Dannmaku : MonoBehaviour
     /// <summary>プレイヤーのレベル</summary>
     public int m_PlayeLv = 1;
 
+    private GameObject target;
+
+    private void Start()
+    {
+        target = GameObject.FindGameObjectWithTag("enemi");
+    }
+
     // Update is called once per frame
     void Update()
     {
         Dbullet();
+
     }
 
     void Dbullet()　//プレイヤーのレベルに応じて銃口の数変更

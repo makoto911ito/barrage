@@ -9,7 +9,7 @@ public class Emove : MonoBehaviour
     /// <summary>ゲームマネージャーを参照するための道具</summary>
     [SerializeField] GameManager m_gm;
     /// <summary>敵を倒したときのスコア</summary>
-    [SerializeField] int m_eScore = 0;
+    public int m_eScore = 10;
 
 
     // Start is called before the first frame update

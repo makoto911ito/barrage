@@ -167,11 +167,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_pSpeed: 5
   m_dannmaku: {fileID: 1735640984}
-  m_gm: {fileID: 6598929517976077389, guid: 935c4ec3f74be924ca65163127597c9d, type: 3}
+  m_gm: {fileID: 0}
   m_exp: 0
   m_kexp: 0.01
-  m_stock: 2
   m_plife: 5
+  m_stock: 2
 --- !u!58 &6763783326001262886
 CircleCollider2D:
   m_ObjectHideFlags: 0
