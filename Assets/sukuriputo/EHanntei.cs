@@ -26,7 +26,7 @@ public class EHanntei : MonoBehaviour
         //    OnBecameInvisible();
         //}
 
-        Destroy(this.gameObject, 30f);
+        Destroy(this.gameObject, 15f);
 
     }
 

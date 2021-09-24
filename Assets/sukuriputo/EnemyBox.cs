@@ -25,11 +25,11 @@ public class EnemyBox : MonoBehaviour
     {
         for (int j = 0; j < m_enemynumber; j++)
         {
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 2; i++)
             {
                 GameObject enemey = Instantiate(m_enemy, transform.position, Quaternion.Euler(0, 0, 0));
-                Rigidbody enemyRb = enemey.GetComponent<Rigidbody>();
-                enemyRb.AddForce(transform.forward * m_speed);
+                //Rigidbody enemyRb = enemey.GetComponent<Rigidbody>();
+                //enemyRb.AddForce(transform.forward * m_speed);
 
                 yield return new WaitForSeconds(0.2f);
             }

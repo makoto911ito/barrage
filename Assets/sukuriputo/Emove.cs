@@ -6,16 +6,17 @@ public class Emove : MonoBehaviour
 {
     /// <summary>敵の最大ライフ</summary>
     [SerializeField] int m_elife = 5;
-    /// <summary>ゲームマネージャーを参照するための道具</summary>
-    public GameManager m_gm;
     /// <summary>敵を倒したときのスコア</summary>
     public int m_eScore = 10;
+    private GameObject m_go;
+    private GameManager m_gm;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        m_go = GameObject.FindGameObjectWithTag("GameManager");
+        m_gm = m_go. GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -26,6 +27,7 @@ public class Emove : MonoBehaviour
             Destroy(this.gameObject);
             m_gm.m_score += m_eScore;
         }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)　//プレイヤーの放つ弾幕が当たった時自分（敵）ライフを１減らす
