@@ -19,10 +19,16 @@ public class Bossmove : MonoBehaviour
 
     public Slider hpSlider;
 
+    public Animator m_Anime;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        m_Anime = GetComponent<Animator>();
+        m_Anime.SetBool("Step1", false);
+        m_Anime.SetBool("Step2", false);
+
         m_go = GameObject.FindGameObjectWithTag("GameManager");
         m_gm = m_go.GetComponent<GameManager>();
 

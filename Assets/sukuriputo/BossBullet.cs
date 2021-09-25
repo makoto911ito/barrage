@@ -17,7 +17,7 @@ public class BossBullet : MonoBehaviour
     void Update()
     {
         transform.RotateAround(center, new Vector3(0, 0, -5), -100 * Time.deltaTime);
-        transform.Translate(0, 0.001f, 0);
+        transform.Translate(0, 0.002f, 0);
     }
 
 }

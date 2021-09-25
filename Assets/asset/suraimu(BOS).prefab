@@ -223,3 +223,4 @@ MonoBehaviour:
   enemi: {fileID: 2696725405116878701}
   timeleft: 0
   m_bspeed: -10
+  m_bossmove: {fileID: 7258515456645905762}

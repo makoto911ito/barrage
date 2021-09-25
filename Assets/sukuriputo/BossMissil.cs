@@ -36,16 +36,25 @@ public class BossMissil : MonoBehaviour
         timeleft -= Time.deltaTime;
         if (timeleft <= 0.0)
         {
-            if(m_bossmove.m_blife > 250)
+            Ebbullet();
+            timeleft = 0.5f;
+
+            if (m_bossmove.m_blife < 400)
             {
-                Ebbullet();
-                timeleft = 0.5f;
+                Debug.Log("うごいた");
+                m_bossmove.m_Anime.SetBool("Step1", true);
+            }
+            else if(m_bossmove.m_blife > 250)
+            {
+
+                m_bossmove.m_Anime.SetBool("Step2", true);
+                //Ebbullet();
+                //timeleft = 0.5f;
             }
             else if(m_bossmove.m_blife < 250)
             {
 
             }
-            timeleft = 0.5f;
         }
 
     }
