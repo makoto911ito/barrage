@@ -8,7 +8,7 @@ public class Emissil : MonoBehaviour
     /// <summary>弾幕のスピード</summary>
     [SerializeField] float m_bspeed = -500;
     /// <summary>待機時間</summary>
-    [SerializeField] float timeleft = 0.0f;
+    [SerializeField] float m_timeleft = 0.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -19,11 +19,11 @@ public class Emissil : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timeleft -= Time.deltaTime;
-        if (timeleft <= 0.0)
+        m_timeleft -= Time.deltaTime;
+        if (m_timeleft <= 0.0)
         {
             Fire();
-            timeleft = 0.1f;
+            m_timeleft = 1f;
         }
     }
 
@@ -33,6 +33,6 @@ public class Emissil : MonoBehaviour
         Rigidbody2D bulletRb = Bullet.GetComponent<Rigidbody2D>();
         bulletRb.AddForce(transform.up * m_bspeed);
 
-        Destroy(Bullet, 30f);
+        Destroy(Bullet, 3f);
     }
 }

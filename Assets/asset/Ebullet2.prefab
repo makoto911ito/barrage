@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 830111917463044553}
   - component: {fileID: 4667391041377333718}
-  - component: {fileID: 4810097125099315944}
   - component: {fileID: 8878365699213370998}
+  - component: {fileID: -5540576115222655773}
   - component: {fileID: 7287023088069419377}
   m_Layer: 0
   m_Name: Ebullet2
@@ -85,18 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4810097125099315944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4048334167710953538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3be508b2b434c2042a760e6eea6130f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!58 &8878365699213370998
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -113,6 +101,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.114285715
+--- !u!114 &-5540576115222655773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4048334167710953538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfb7c0b00ae21d545b46cd032597c4a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &7287023088069419377
 Rigidbody2D:
   serializedVersion: 4

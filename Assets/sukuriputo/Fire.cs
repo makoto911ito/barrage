@@ -34,7 +34,7 @@ public class Fire : MonoBehaviour
         if (timeleft <= 0.0)
         {
             Edbullet();
-            timeleft = 0.1f;
+            timeleft = 0.6f;
         }
         //OnBecameVisible();
 

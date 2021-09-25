@@ -26,7 +26,7 @@ public class Pmove : MonoBehaviour
     [SerializeField] float m_kexp = 0.01f;
 
     /// <summary>プレイヤーの最大ライフ</summary>
-    [SerializeField] int m_plife = 10;
+    public int m_plife = 10;
 
     /// <summary>プレイヤーの残機</summary>
     [SerializeField] int m_stock = 3;
@@ -60,7 +60,7 @@ public class Pmove : MonoBehaviour
     }
 
     /// <summary>カメラの外にプレイヤーが移動しないようにする</summary>
-    void Move()
+    public void Move()
     {
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");

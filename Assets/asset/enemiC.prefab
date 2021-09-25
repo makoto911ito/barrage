@@ -216,6 +216,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Ebullert: {fileID: 3891454059214948583, guid: 7278be26b5d61a94b95683ec2d7ad068,
     type: 3}
-  PlayerFirePrefab: {fileID: 8218311677732438693, guid: 9b7e4d2b4d87467499414699fa9c32bf,
-    type: 3}
   enemi: {fileID: 181278279643142712}
+  timeleft: 0
+  m_bspeed: -500

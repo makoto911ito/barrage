@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 409f4f1d877eb4e45839e49ea5f50b1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_speed: 0
+  m_speed: 3
 --- !u!1 &3340521623687962717
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,6 +216,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Ebullert: {fileID: 3172811969854308233, guid: e6b4bee6d7961c34a8b13eb1c0c70fd9,
     type: 3}
-  PlayerFirePrefab: {fileID: 8218311677732438693, guid: 9b7e4d2b4d87467499414699fa9c32bf,
-    type: 3}
   enemi: {fileID: 2303238902286471179}
+  timeleft: 0
+  m_bspeed: -10

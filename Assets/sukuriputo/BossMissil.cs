@@ -21,6 +21,8 @@ public class BossMissil : MonoBehaviour
     /// <summary>弾幕のスピード</summary>
     [SerializeField] float m_bspeed = -500;
 
+    [SerializeField] Bossmove m_bossmove;
+
 
     // Start is called before the first frame update
     void Start()
@@ -34,40 +36,38 @@ public class BossMissil : MonoBehaviour
         timeleft -= Time.deltaTime;
         if (timeleft <= 0.0)
         {
-            Edbullet();
-            timeleft = 0.1f;
+            if(m_bossmove.m_blife > 250)
+            {
+                Ebbullet();
+                timeleft = 0.5f;
+            }
+            else if(m_bossmove.m_blife < 250)
+            {
+
+            }
+            timeleft = 0.5f;
         }
-        //OnBecameVisible();
 
     }
 
-    void Edbullet()
+    void Ebbullet()
     {
+
         GameObject Bullet = Instantiate(m_Ebullert, transform.position, Quaternion.identity);
+        //Bullet.transform.SetAsLastSibling();
         Rigidbody2D bulletRb = Bullet.GetComponent<Rigidbody2D>();
         bulletRb.AddForce(transform.up * m_bspeed);
 
         GameObject Bullet2 = Instantiate(m_Ebullert2, transform.position, Quaternion.identity);
+        //Bullet2.transform.SetAsLastSibling();
         Rigidbody2D bulletRb2 = Bullet.GetComponent<Rigidbody2D>();
         bulletRb.AddForce(transform.up * m_bspeed);
 
-        Destroy(Bullet, 30f);
+        Destroy(Bullet, 40f);
+    }
 
-        //if (m_time > 3)
-        //{
-        //    Instantiate(m_Ebullert, new Vector3(enemi.position.x - 50, enemi.position.y, enemi.position.z),Quaternion.identity);
-        //}
+    void EBbullet()
+    {
 
     }
-    //void OnBecameVisible()
-    //{
-    //    if (!m_hanntei)
-    //    {
-    //        m_hanntei = true;
-    //        Debug.Log("起動");
-    //        obj = Instantiate(PlayerFirePrefab, transform.position, Quaternion.identity); //銃口を生成しそれをobjに代入している
-    //        obj.transform.SetParent(enemi); //objをHarpy(プレイヤー)の子供にする
-    //        obj2.Add(obj); //obj2のリストにobjを加えていく
-    //    }
-    //}
 }

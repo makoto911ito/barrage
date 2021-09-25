@@ -13,9 +13,11 @@ GameObject:
   - component: {fileID: 2696725405116878703}
   - component: {fileID: 702560742743857446}
   - component: {fileID: 6780030779312780382}
+  - component: {fileID: 138293456}
+  - component: {fileID: 7258515456645905762}
   m_Layer: 0
   m_Name: suraimu(BOS)
-  m_TagString: Untagged
+  m_TagString: enemi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,7 +126,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &6780030779312780382
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -135,12 +137,42 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.041457772, y: -0.079357654}
   serializedVersion: 2
   m_Radius: 0.27502537
+--- !u!114 &138293456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2696725405116878702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 409f4f1d877eb4e45839e49ea5f50b1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_speed: 0
+--- !u!114 &7258515456645905762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2696725405116878702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e54c78da1105e71459a1b068a7607541, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_blife: 500
+  m_scoaItem: {fileID: 1488556771787907197, guid: 244030b42a80a5744b4428b076e203e4,
+    type: 3}
+  m_eScore: 10000
+  hpSlider: {fileID: 0}
 --- !u!1 &5671978002811822973
 GameObject:
   m_ObjectHideFlags: 0

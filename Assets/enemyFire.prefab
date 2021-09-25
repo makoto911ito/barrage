@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7183406248514884012
+--- !u!1 &1440257960668799221
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,44 +8,42 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6252954356324963134}
-  - component: {fileID: 7098774209904710661}
+  - component: {fileID: 5720340193889633584}
+  - component: {fileID: 3904643535183252128}
   m_Layer: 0
-  m_Name: BossFire
+  m_Name: enemyFire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6252954356324963134
+--- !u!4 &5720340193889633584
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7183406248514884012}
+  m_GameObject: {fileID: 1440257960668799221}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7098774209904710661
+--- !u!114 &3904643535183252128
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7183406248514884012}
+  m_GameObject: {fileID: 1440257960668799221}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f76f4849aba14f644bf03b26d33d1216, type: 3}
+  m_Script: {fileID: 11500000, guid: 677cb6ff289a6fe499dc61fd9c0e0aff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_bulletPrefab: {fileID: 3172811969854308233, guid: e6b4bee6d7961c34a8b13eb1c0c70fd9,
+  m_bulletPrefab: {fileID: 1199578746118740885, guid: a8f3c1995c5ad0546a7720dbcdf1ed0e,
     type: 3}
-  m_bulletPrefab2: {fileID: 7232708783106073883, guid: c70657cc7c2015849ab46b76945adf51,
-    type: 3}
-  m_bspeed: -10
+  m_bspeed: -200
   timeleft: 0
