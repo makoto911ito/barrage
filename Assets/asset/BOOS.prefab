@@ -411,6 +411,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 3399492907671270460}
     m_Modifications:
     - target: {fileID: 172175971, guid: 30923a092f894d54c8b774ee6db4fd03, type: 3}
+      propertyPath: m_boss
+      value: 
+      objectReference: {fileID: 5446542518476391107}
+    - target: {fileID: 172175971, guid: 30923a092f894d54c8b774ee6db4fd03, type: 3}
       propertyPath: m_bossmove
       value: 
       objectReference: {fileID: 5446542518476391107}

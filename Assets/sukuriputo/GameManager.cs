@@ -24,6 +24,12 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] Bossmove m_bossmove;
 
+    [SerializeField] AudioSource m_soundA;
+
+    [SerializeField] AudioSource m_soundB;
+
+    [SerializeField] Button m_boton;
+
     [SerializeField] float m_timeleft;
 
     [SerializeField] float m_time;
@@ -35,6 +41,7 @@ public class GameManager : MonoBehaviour
     {
         m_clearText.enabled = false;
         m_gameoverText.enabled = false;
+        m_boton.gameObject.SetActive(false);
         m_time = m_timeleft;
     }
 
@@ -42,6 +49,13 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         m_scoreText.text = "score " + m_score.ToString();
+
+        if (GameObject.FindGameObjectWithTag("Boss") == true)
+        {
+            m_soundA.enabled = false;
+            m_soundB.enabled = true;
+
+        }
 
         if (GameObject.FindGameObjectWithTag("EnemyBox") == null && GameObject.FindGameObjectWithTag("enemi") == null)
         {
@@ -53,6 +67,8 @@ public class GameManager : MonoBehaviour
                 {
                     m_clearText.enabled = true;
                     m_scoreText.enabled = false;
+                    m_tscoaText.enabled = true;
+                    m_boton.gameObject.SetActive(true);
                     m_tscoaText.text = "獲得スコア　" + m_score.ToString();
                 }
             }
@@ -62,6 +78,8 @@ public class GameManager : MonoBehaviour
         if (GameObject.FindGameObjectWithTag("Plaeyr") == null)
         {
             m_gameoverText.enabled = true;
+            m_boton.gameObject.SetActive(true);
+
         }
     }
 

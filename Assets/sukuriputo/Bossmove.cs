@@ -9,7 +9,7 @@ public class Bossmove : MonoBehaviour
     /// <summary>敵の最大ライフ</summary>
     public int m_blife = 500;
     /// <summary>スコアアイテム</summary>
-    [SerializeField] GameObject m_scoaItem;
+    public GameObject m_scoaItem;
     /// <summary>敵を倒したときのスコア</summary>
     public int m_eScore = 10000;
     private GameObject m_go;

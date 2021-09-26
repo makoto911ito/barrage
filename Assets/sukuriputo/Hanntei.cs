@@ -18,7 +18,6 @@ public class Hanntei : MonoBehaviour
         //    Debug.Log("うつらない");
         //}
 
-
     }
 
     /// <summary>カメラの外に出たときの処理</summary>
