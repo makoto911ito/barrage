@@ -173,6 +173,7 @@ MonoBehaviour:
     type: 3}
   m_eScore: 10000
   hpSlider: {fileID: 0}
+  m_Anime: {fileID: 0}
 --- !u!1 &5671978002811822973
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,6 +222,6 @@ MonoBehaviour:
   m_Ebullert2: {fileID: 3172811969854308233, guid: e6b4bee6d7961c34a8b13eb1c0c70fd9,
     type: 3}
   enemi: {fileID: 2696725405116878701}
-  timeleft: 0
+  timeleft: 0.5
   m_bspeed: -10
   m_bossmove: {fileID: 7258515456645905762}

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EhannteiB : MonoBehaviour
+public class HannteiB : MonoBehaviour
 {
 
     // Update is called once per frame
@@ -18,20 +18,18 @@ public class EhannteiB : MonoBehaviour
         //    Debug.Log("うつらない");
         //}
 
-        //m_time += Time.deltaTime;
-        //if (m_time > 30f)
-        //{
-        //    Debug.Log("kieta");
-        //    OnBecameInvisible();
-        //}
-
-        Destroy(this.gameObject, 30f);
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)　//プレイヤーキャラに弾幕が当たった時の処理
+    /// <summary>カメラの外に出たときの処理</summary>
+    void OnBecameInvisible()
     {
-        if (collision.gameObject.tag == "Plaeyr")　//弾幕がプレイヤーのタグをもつオブジェクトに当たった時、弾幕を消す
+        Destroy(this.gameObject);　//このスクリプトを持つオブジェクトを消す
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)　//敵キャラに弾幕が当たった時の処理
+    {
+        if (collision.gameObject.tag == "Plaeyr")　//弾幕が敵のタグをもつオブジェクトに当たった時、弾幕を消す
         {
             Destroy(this.gameObject);
         }

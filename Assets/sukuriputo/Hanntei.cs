@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Hanntei : MonoBehaviour
 {
-    private float m_time = 0f;
 
     // Update is called once per frame
     void Update()
@@ -19,12 +18,6 @@ public class Hanntei : MonoBehaviour
         //    Debug.Log("うつらない");
         //}
 
-        m_time += Time.deltaTime;
-        if (m_time > 30f)
-        {
-            Debug.Log("kieta");
-            OnBecameInvisible();
-        }
 
     }
 

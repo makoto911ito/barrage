@@ -12,6 +12,8 @@ TagManager:
   - Plaeyr
   - Ebullet
   - GameManager
+  - EnemyBox
+  - Boss
   layers:
   - Default
   - TransparentFX

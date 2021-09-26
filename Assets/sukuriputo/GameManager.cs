@@ -12,20 +12,30 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] Text m_bosslifeText;
 
+    [SerializeField] Text m_clearText;
+
+    [SerializeField] Text m_tscoaText;
+
     [SerializeField] GameObject m_scoaItem;
 
-    [SerializeField] GameObject m_bossbox;
+    [SerializeField] GameObject m_Boss;
 
     [SerializeField] GameObject m_bossobj;
 
     [SerializeField] Bossmove m_bossmove;
+
+    [SerializeField] float m_timeleft;
+
+    [SerializeField] float m_time;
 
     public int m_score = 0;
 
 
     private void Start()
     {
-
+        m_clearText.enabled = false;
+        m_gameoverText.enabled = false;
+        m_time = m_timeleft;
     }
 
 
@@ -33,10 +43,25 @@ public class GameManager : MonoBehaviour
     {
         m_scoreText.text = "score " + m_score.ToString();
 
-
-        if(m_scoaItem == null && m_bossbox == null)
+        if (GameObject.FindGameObjectWithTag("EnemyBox") == null && GameObject.FindGameObjectWithTag("enemi") == null)
         {
+            m_time -= Time.deltaTime;
+            if (m_time <= 0 && GameObject.FindGameObjectWithTag("Boss") == null)
+            {
+                m_time = m_timeleft;
+                if (m_time <= 0 && GameObject.FindGameObjectWithTag("score") == null)
+                {
+                    m_clearText.enabled = true;
+                    m_scoreText.enabled = false;
+                    m_tscoaText.text = "獲得スコア　" + m_score.ToString();
+                }
+            }
 
+        }
+
+        if (GameObject.FindGameObjectWithTag("Plaeyr") == null)
+        {
+            m_gameoverText.enabled = true;
         }
     }
 

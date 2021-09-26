@@ -4,20 +4,10 @@ using UnityEngine;
 
 public class BossMissil : MonoBehaviour
 {
-
-    /// <summary>生み出す銃口を入れる箱</summary>
-    private GameObject obj;
-    /// <summary>銃口の箱を保存する場所</summary>
-    private List<GameObject> obj2 = new List<GameObject>();
     [SerializeField] GameObject m_Ebullert;
     [SerializeField] GameObject m_Ebullert2;
-    //親オブジェクトのトランスフォームをアサイン
-    [SerializeField] Transform enemi;
-    private Transform tf;
-    float m_time = 0;
-    private bool m_hanntei = false;
     /// <summary>待機時間</summary>
-    [SerializeField] float timeleft = 0.0f;
+    [SerializeField] float timeleft;
     /// <summary>弾幕のスピード</summary>
     [SerializeField] float m_bspeed = -500;
 
@@ -37,21 +27,21 @@ public class BossMissil : MonoBehaviour
         if (timeleft <= 0.0)
         {
             Ebbullet();
-            timeleft = 0.5f;
+            timeleft = 3f;
 
             if (m_bossmove.m_blife < 400)
             {
                 Debug.Log("うごいた");
                 m_bossmove.m_Anime.SetBool("Step1", true);
+                timeleft = 1f;
             }
-            else if(m_bossmove.m_blife > 250)
+            else if(m_bossmove.m_blife < 250)
             {
 
                 m_bossmove.m_Anime.SetBool("Step2", true);
-                //Ebbullet();
-                //timeleft = 0.5f;
+                timeleft = 0.5f;
             }
-            else if(m_bossmove.m_blife < 250)
+            else if(m_bossmove.m_blife < 100)
             {
 
             }

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4851397824508448779}
-  - component: {fileID: 103987554}
+  - component: {fileID: 288358954}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 2000424051389052557}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &103987554
+--- !u!114 &288358954
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,14 +40,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1174438171720770093}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d91d05ee2a18b8d46b3c9c691eaac5be, type: 3}
+  m_Script: {fileID: 11500000, guid: 585debcdde68de94290ea3e42c004349, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Ebullert: {fileID: 1440257960668799221, guid: 9028619448afbd74c90dedf7a281b1e5,
+  m_Ebullert: {fileID: 4053043281965221716, guid: f13e93865789eea4c8e8779f5f323c63,
     type: 3}
   enemi: {fileID: 2000424051389052557}
-  timeleft: 0
-  m_bspeed: 100
+  m_timeleft: 1
+  m_bspeed: -100
 --- !u!1 &2000424051389052544
 GameObject:
   m_ObjectHideFlags: 0
@@ -65,7 +65,7 @@ GameObject:
   - component: {fileID: -5506380236021043333}
   m_Layer: 0
   m_Name: enemiB
-  m_TagString: Untagged
+  m_TagString: enemi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -205,6 +205,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_elife: 5
+  m_scoaItem: {fileID: 1488556771787907197, guid: 244030b42a80a5744b4428b076e203e4,
+    type: 3}
+  m_expItem: {fileID: 3355243031205169914, guid: e7c600e482380f947ae5af3077d1caea,
+    type: 3}
   m_eScore: 10
 --- !u!114 &-5506380236021043333
 MonoBehaviour:

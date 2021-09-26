@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fire : MonoBehaviour
+public class Fire2 : MonoBehaviour
 {
 
+    /// <summary>生み出す銃口を入れる箱</summary>
+    private GameObject obj;
+    /// <summary>銃口の箱を保存する場所</summary>
+    private List<GameObject> obj2 = new List<GameObject>();
     [SerializeField] GameObject m_Ebullert;
     //親オブジェクトのトランスフォームをアサイン
     [SerializeField] Transform enemi;
@@ -37,28 +41,14 @@ public class Fire : MonoBehaviour
 
     void Edbullet()
     {
-        GameObject Bullet = Instantiate(m_Ebullert, transform.position, Quaternion.identity);
+        GameObject Bullet = Instantiate(m_Ebullert, transform.position, Quaternion.Euler(0,0,-7.5f));
         Rigidbody2D bulletRb = Bullet.GetComponent<Rigidbody2D>();
         bulletRb.AddForce(transform.up * m_bspeed);
+        GameObject Bullet2 = Instantiate(m_Ebullert, transform.position, Quaternion.Euler(0,0,7.5f));
+        Rigidbody2D bulletRb2 = Bullet2.GetComponent<Rigidbody2D>();
+        bulletRb2.AddForce(transform.up * m_bspeed);
+
 
         Destroy(Bullet, 30f);
-
-        //if (m_time > 3)
-        //{
-        //    Instantiate(m_Ebullert, new Vector3(enemi.position.x - 50, enemi.position.y, enemi.position.z),Quaternion.identity);
-        //}
-
     }
-    //void OnBecameVisible()
-    //{
-    //    if (!m_hanntei)
-    //    {
-    //        m_hanntei = true;
-    //        Debug.Log("起動");
-    //        obj = Instantiate(PlayerFirePrefab, transform.position, Quaternion.identity); //銃口を生成しそれをobjに代入している
-    //        obj.transform.SetParent(enemi); //objをHarpy(プレイヤー)の子供にする
-    //        obj2.Add(obj); //obj2のリストにobjを加えていく
-    //    }
-    //}
 }
-

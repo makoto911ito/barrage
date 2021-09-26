@@ -9,17 +9,8 @@ public class NewBehaviourScript1 : MonoBehaviour
     /// <summary>銃口の箱を保存する場所</summary>
     private List<GameObject> obj2 = new List<GameObject>();
     [SerializeField] GameObject m_Ebullert;
-    //[SerializeField] GameObject m_Ebullert2;
-    //[SerializeField] GameObject m_Ebullert3;
     //親オブジェクトのトランスフォームをアサイン
     [SerializeField] Transform enemi;
-    private Transform tf;
-    float m_time = 0;
-    private bool m_hanntei = false;
-    /// <summary>待機時間</summary>
-    [SerializeField] float timeleft = 0.0f;
-    /// <summary>弾幕のスピード</summary>
-    [SerializeField] float m_bspeed = -500;
 
 
     // Start is called before the first frame update

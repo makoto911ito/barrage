@@ -33,6 +33,6 @@ public class Emissil : MonoBehaviour
         Rigidbody2D bulletRb = Bullet.GetComponent<Rigidbody2D>();
         bulletRb.AddForce(transform.up * m_bspeed);
 
-        Destroy(Bullet, 3f);
+        Destroy(Bullet, 10f);
     }
 }

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EHanntei : MonoBehaviour
 {
-    private float m_time = 0f;
 
     // Update is called once per frame
     void Update()
@@ -26,7 +25,7 @@ public class EHanntei : MonoBehaviour
         //    OnBecameInvisible();
         //}
 
-        Destroy(this.gameObject, 15f);
+        //Destroy(this.gameObject, 15f);
 
     }
 

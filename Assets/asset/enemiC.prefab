@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8759711167049102823}
   m_Layer: 0
   m_Name: enemiC
-  m_TagString: Untagged
+  m_TagString: enemi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -157,6 +157,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_elife: 5
+  m_scoaItem: {fileID: 1488556771787907197, guid: 244030b42a80a5744b4428b076e203e4,
+    type: 3}
+  m_expItem: {fileID: 3355243031205169914, guid: e7c600e482380f947ae5af3077d1caea,
+    type: 3}
   m_eScore: 10
 --- !u!114 &8759711167049102823
 MonoBehaviour:

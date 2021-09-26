@@ -12,10 +12,11 @@ GameObject:
   - component: {fileID: 2748873827932290329}
   - component: {fileID: -7389511815484004947}
   - component: {fileID: 2939505810232825990}
+  - component: {fileID: -455130412220349514}
   - component: {fileID: -5599145819026912261}
   m_Layer: 0
   m_Name: Ebullet3
-  m_TagString: Untagged
+  m_TagString: Ebullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,6 +114,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.114285715
+--- !u!114 &-455130412220349514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4053043281965221716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c958739dacb1fa3499968a327f3f4813, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &-5599145819026912261
 Rigidbody2D:
   serializedVersion: 4

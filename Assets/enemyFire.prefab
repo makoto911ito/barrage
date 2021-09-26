@@ -46,4 +46,4 @@ MonoBehaviour:
   m_bulletPrefab: {fileID: 1199578746118740885, guid: a8f3c1995c5ad0546a7720dbcdf1ed0e,
     type: 3}
   m_bspeed: -200
-  timeleft: 0
+  m_timeleft: 0

@@ -16,7 +16,6 @@ public class EnemyBOX2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(GeneEnemy());
 
 
     }
@@ -24,25 +23,9 @@ public class EnemyBOX2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-    }
-
-    IEnumerator GeneEnemy()
-    {
-        for (int j = 0; j < m_enemynumber; j++)
+        if (GameObject.FindGameObjectWithTag("EnemyBox") == null)
         {
-            for (int i = 0; i < 2; i++)
-            {
-                m_x = Random.Range(-2.5f, 2.6f);
-                m_y = Random.Range(-4f, 0.1f);
-                GameObject enemey = Instantiate(m_enemy, new Vector3(transform.position.x + m_x, transform.position.y + m_y, transform.position.z), Quaternion.identity);
-                Rigidbody2D enemyRb = enemey.GetComponent<Rigidbody2D>();
-                enemyRb.AddForce(transform.forward * m_speed);
-
-                yield return new WaitForSeconds(10f);
-            }
-
-            yield return new WaitForSeconds(3f);
+            gameObject.SetActive(true);
         }
     }
 }
